@@ -11,7 +11,6 @@ public class TuberTreatsTests
     [Fact]
     public async void TestTuberOrders()
     {
-
         await using var application = new WebApplicationFactory<Program>();
         using var client = application.CreateClient();
 

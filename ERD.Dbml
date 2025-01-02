@@ -1,0 +1,37 @@
+// TuberTreats ERD
+
+Table customers {
+  id int [pk]
+  name string
+  address string
+}
+
+Table tuber_orders {
+  id int [pk]
+  order_placed_on_date datetime
+  customer_id int [ref: > customers.id]
+  tuber_driver_id int [ref: > tuber_drivers.id]
+  delivered_on_date datetime
+}
+
+Table toppings {
+  id int [pk]
+  name string
+}
+
+Table tuber_toppings {
+  id int [pk]
+  tuber_order_id int [ref: > tuber_orders.id]
+  topping_id int [ref: > toppings.id]
+}
+
+Table tuber_drivers {
+  id int [pk]
+  name string
+}
+
+// Relationships
+Ref: tuber_orders.customer_id > customers.id
+Ref: tuber_orders.tuber_driver_id > tuber_drivers.id
+Ref: tuber_toppings.tuber_order_id > tuber_orders.id
+Ref: tuber_toppings.topping_id > toppings.id
