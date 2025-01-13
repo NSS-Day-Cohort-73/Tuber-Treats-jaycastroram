@@ -1,3 +1,4 @@
+/*
 using Microsoft.AspNetCore.Mvc;
 using TuberTreats.Models;
 
@@ -37,3 +38,4 @@ namespace TuberTreats.Controllers
         }
     }
 } 
+*/ 
